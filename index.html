@@ -1,451 +1,507 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Portfolio</title>
-
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    <title>Omkar Wakchaure — Frontend Developer</title>
+    <meta
+      name="description"
+      content="Omkar Wakchaure — Frontend Developer specializing in React, TypeScript and AI-integrated web applications."
     />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="mediaqueries.css" />
   </head>
   <body>
-    <nav id="desktop-nav">
-      <div class="logo">Omkar Wakchaure</div>
-      <div>
-        <ul class="nav-links">
-          <li><a href="#about">About</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </div>
+    <div class="grid-backdrop" aria-hidden="true"></div>
+
+    <!-- ===== NAV ===== -->
+    <nav id="navbar">
+      <a href="./#home" class="logo">omkar<span>.dev</span></a>
+
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#about" class="nav-link">&lt;About /&gt;</a></li>
+        <li><a href="#experience" class="nav-link">&lt;Experience /&gt;</a></li>
+        <li><a href="#skills" class="nav-link">&lt;Skills /&gt;</a></li>
+        <li><a href="#project" class="nav-link">&lt;Project /&gt;</a></li>
+        <li><a href="#contact" class="nav-link">&lt;Contact /&gt;</a></li>
+      </ul>
+
+      <a
+        class="btn btn-outline nav-resume"
+        href="./assets/Omkar-Wakchaure-Resume.pdf"
+        target="_blank"
+        rel="noopener"
+        >Resume ↗</a
+      >
+
+      <button
+        class="hamburger"
+        id="hamburger"
+        aria-label="Toggle navigation menu"
+        aria-expanded="false"
+      >
+        <span></span><span></span><span></span>
+      </button>
     </nav>
-    <nav id="hamburger-nav">
-      <div class="logo">Omkar Wakchaure</div>
-      <div class="hamburger-menu">
-        <div class="hamburger-icon" onclick="toggleMenu()">
-          <span></span>
-          <span></span>
-          <span></span>
+
+    <!-- ===== HERO ===== -->
+    <section id="home">
+      <div class="hero-grid">
+        <div class="hero-text">
+          <p class="eyebrow">// home.tsx</p>
+          <h1 class="hero-title">
+            Omkar<br />
+            Wakchaure
+          </h1>
+          <p class="hero-role">
+            <span class="type-val">React</span> Frontend Developer → TypeScript
+            → Redux → APIs → UI architecture → AI integration
+          </p>
+          <p class="hero-desc">
+            Frontend Developer with 2+ years of experience building
+            production-grade React applications, reusable component systems,
+            role-based enterprise dashboards, and AI-powered products.
+          </p>
+
+          <div class="btn-container">
+            <a href="./#project" class="btn btn-solid">View Featured Project</a>
+            <a
+              href="./assets/Omkar-Wakchaure-Resume.pdf"
+              target="_blank"
+              rel="noopener"
+              class="btn btn-outline"
+              >Download Résumé</a
+            >
+          </div>
+
+          <div class="hero-meta">
+            <span>📍 Mumbai, India</span>
+            <span class="dot">•</span>
+            <span>2+ years experience</span>
+            <span class="dot">•</span>
+            <span>Open to opportunities</span>
+          </div>
         </div>
-        <div class="menu-links">
-          <li><a href="#about" onclick="toggleMenu()">About</a></li>
-          <li><a href="#skills" onclick="toggleMenu()">Skills</a></li>
-          <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
-          <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+
+        <div class="hero-pic">
+          <div class="inspector-frame">
+            <span class="corner tl"></span>
+            <span class="corner tr"></span>
+            <span class="corner bl"></span>
+            <span class="corner br"></span>
+            <img
+              src="./assets/profile-pic.png"
+              alt="Omkar Wakchaure, frontend developer"
+            />
+            <span class="inspector-tag tag-top"
+              >&lt;profile role="dev"&gt;</span
+            >
+            <span class="inspector-tag tag-bottom">512 × 512 · .png</span>
+          </div>
+          <div class="socials-container">
+            <a
+              href="https://www.linkedin.com/in/omkar-wakchaure-6662301b3/"
+              target="_blank"
+              rel="noopener"
+              aria-label="LinkedIn"
+              class="icon-link"
+            >
+              <img src="./assets/linkedin.png" alt="" class="icon" />
+            </a>
+            <a
+              href="https://github.com/omkarwakchaure"
+              target="_blank"
+              rel="noopener"
+              aria-label="GitHub"
+              class="icon-link"
+            >
+              <img src="./assets/github.png" alt="" class="icon" />
+            </a>
+            <a
+              href="mailto:omkarwakchaure2019@gmail.com"
+              aria-label="Email"
+              class="icon-link"
+            >
+              <img src="./assets/email.png" alt="" class="icon" />
+            </a>
+          </div>
         </div>
       </div>
-    </nav>
-    <section id="profile">
-      <div class="section__pic-container">
-        <img
-          src="./assets/profile-pic.png1.png"
-          alt="Omkar Wakchaure profile pic"
-        />
-      </div>
-      <div class="section__text">
-        <p class="section__text__p1">Hello, I'm</p>
-        <h1 class="title">Omkar Wakchaure</h1>
-        <p class="section__text__p2">Full-Stack Developer</p>
-        <div class="btn-container">
-          <button
-            class="btn btn-color-2"
-            onclick="window.open('./assets/Omkar-Wakchaure-Resume.pdf')"
-          >
-            Download Resume
-          </button>
-          <button class="btn btn-color-1" onclick="location.href='./#contact' ">
-            Contact Info
-          </button>
-        </div>
-        <div id="socials-container">
-          <img
-            src="./assets/linkedin.png"
-            alt="My linkedin profile"
-            class="icon"
-            onclick="location.href='https://www.linkedin.com/in/omkar-wakchaure-6662301b3/'"
-          />
-          <img
-            src="./assets/github.png"
-            alt="My Github profile"
-            class="icon"
-            onclick="location.href='https://github.com/omkarwakchaure'"
-          />
-        </div>
-      </div>
+      <a href="./#about" class="scroll-cue" aria-label="Scroll to About">
+        <span></span>
+      </a>
     </section>
+
+    <!-- ===== ABOUT ===== -->
     <section id="about">
-      <p class="section__text__p1">Get To Know More</p>
-      <h1 class="title">About me</h1>
-      <!-- <div class="section__pic-container">
-            <img
-            src="./assets/about-pic.png"
-            alt="Profile picture"
-            class="about-pic"
-            />
-        </div> -->
-      <div class="about-details-container">
-        <div class="about-containers">
-          <div class="details-container">
-            <img
-              src="./assets/experience.png"
-              alt="Experience icon"
-              class="icon"
-            />
-            <h3>Training</h3>
-            <p>Profound Edutech<br />Full-Stack Development</p>
+      <p class="eyebrow">// about.tsx</p>
+      <h2 class="title">About Me</h2>
+
+      <div class="about-grid">
+        <div class="about-copy">
+          <p>
+            I'm a Frontend Developer with 2+ years of experience building
+            production React applications — enterprise tools with strict access
+            control on one end, and AI-powered consumer products on the other.
+          </p>
+          <p>
+            At <strong>Network Techlab</strong>, I design workflow-driven,
+            backend-configurable UIs that adapt across modules without code
+            changes, and build the reusable component systems that keep a
+            growing codebase maintainable. Outside of work, I integrate LLM APIs
+            into side projects to explore how AI features actually get built
+            into real interfaces — not just demoed.
+          </p>
+          <p>
+            I'm now looking for frontend roles where I can contribute to
+            scalable UI architecture, build high-quality React applications, and
+            take on greater ownership.
+          </p>
+        </div>
+
+        <div class="about-cards">
+          <div class="info-card">
+            <img src="./assets/experience.png" alt="" class="icon" />
+            <h3>Experience</h3>
+            <p>
+              Network Techlab India Pvt. Ltd<br />Software Engineer · Apr
+              2025–Present
+            </p>
           </div>
-          <div class="details-container">
-            <img
-              src="./assets/education.png"
-              alt="Education icon"
-              class="icon"
-            />
+          <div class="info-card">
+            <img src="./assets/education.png" alt="" class="icon" />
             <h3>Education</h3>
-            <p>BE Completed<br />Savitribai Phule Pune University</p>
+            <p>
+              B.E. Computer Engineering<br />Savitribai Phule Pune University ·
+              8.62 GPA
+            </p>
           </div>
         </div>
-        <div class="text-container">
-          <p>
-            • Hello, I'm Omkar Wakchaure!<br />
+      </div>
+    </section>
 
-            • I hold a Bachelor's degree in Computer Science Engineering from
-            Savitribai Phule Pune University. Currently, I am building my
-            expertise as a Full-Stack Developer by acquiring in-demand skills
-            including HTML, CSS, JavaScript, React.js, Node.js, Express.js,
-            MongoDB.<br />
+    <!-- ===== EXPERIENCE ===== -->
+    <section id="experience">
+      <p class="eyebrow">// experience.tsx</p>
+      <h2 class="title">Experience</h2>
 
-            • I am also proficient in using Git, GitHub, and have a strong
-            foundation in Data Structures and Algorithms (DSA).<br />
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <div class="timeline-head">
+              <h3>Software Engineer</h3>
+              <span class="timeline-date">Apr 2025 — Present</span>
+            </div>
+            <p class="timeline-company">
+              Network Techlab India Pvt Ltd · Mumbai
+            </p>
+            <p
+              class="timeline-company"
+              style="
+                font-family: var(--font-mono);
+                font-size: 0.78rem;
+                opacity: 0.8;
+              "
+            >
+              React · TypeScript · Redux Toolkit · Tailwind CSS · REST APIs ·
+              Docker
+            </p>
+            <ul>
+              <li>
+                Built a React-based asset management application with QR-driven
+                asset tracking, enabling teams to manage and monitor assets
+                across departments.
+              </li>
+              <li>
+                Implemented role-based routing and access control, restricting
+                routes and UI by permission to strengthen application security.
+              </li>
+              <li>
+                Designed a workflow-driven dynamic UI with backend-configurable
+                fields, enabling new modules without code changes.
+              </li>
+              <li>
+                Built reusable Table, Modal, Filter and Pagination components,
+                cutting duplicate code across the app.
+              </li>
+              <li>
+                Shipped bulk Excel import with validation, reducing manual data
+                entry by an estimated 60–70%, plus a dynamic multi-layout PDF
+                export module.
+              </li>
+              <li>
+                Containerized the application with Docker for consistent dev,
+                test and deployment environments.
+              </li>
+            </ul>
+          </div>
+        </div>
 
-            Beyond academics and professional development, I enjoy playing video
-            games as a way to unwind and stay creative.
-          </p>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <div class="timeline-head">
+              <h3>Frontend Developer</h3>
+              <span class="timeline-date">Jun 2024 — Apr 2025</span>
+            </div>
+            <p class="timeline-company">
+              MITR Learning & Media Pvt Ltd · Remote
+            </p>
+            <p
+              class="timeline-company"
+              style="
+                font-family: var(--font-mono);
+                font-size: 0.78rem;
+                opacity: 0.8;
+              "
+            >
+              React · JavaScript · Tailwind CSS · REST APIs
+            </p>
+            <ul>
+              <li>
+                Built responsive UI for a UK-based e-learning platform, lifting
+                user engagement by 35% through optimized UI/UX.
+              </li>
+              <li>
+                Developed reusable React components, cutting development time by
+                40% and improving maintainability.
+              </li>
+              <li>
+                Optimized load performance by 50% using lazy loading and code
+                splitting.
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
-      <!-- </div> -->
-      <img
-        src="./assets/arrow.png"
-        alt="Arrow icon"
-        class="icon arrow"
-        onclick="location.href='./#skills'"
-      />
     </section>
+
+    <!-- ===== SKILLS ===== -->
     <section id="skills">
-      <p class="section__text__p1">Explore My</p>
-      <h1 class="title">Skills</h1>
-      <div class="skills-details-container">
-        <div class="about-containers">
-          <div class="details-container">
-            <h2 class="skills-sub-title">Frontend Development</h2>
-            <div class="article-container">
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>HTML</h3>
-                  <p>Advanced</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>CSS</h3>
-                  <p>Advanced</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Tailwind</h3>
-                  <p>Advanced</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>JavaScript</h3>
-                  <p>Intermediate</p>
-                </div>
-              </article>
+      <p class="eyebrow">// skills.ts</p>
+      <h2 class="title">Skills</h2>
 
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>React Js</h3>
-                  <p>Intermediate</p>
-                </div>
-              </article>
-            </div>
+      <div class="skills-grid">
+        <div class="skill-group">
+          <h3>Frontend</h3>
+          <div class="tag-row">
+            <span class="tag">&lt;React.js /&gt;</span>
+            <span class="tag">&lt;TypeScript /&gt;</span>
+            <span class="tag">&lt;JavaScript /&gt;</span>
+            <span class="tag">&lt;Redux Toolkit /&gt;</span>
+            <span class="tag">&lt;Tailwind CSS /&gt;</span>
+            <span class="tag">&lt;MaterialUI /&gt;</span>
+            <span class="tag">&lt;HTML5 /&gt;</span>
+            <span class="tag">&lt;CSS3 /&gt;</span>
           </div>
-          <div class="details-container">
-            <h2 class="skills-sub-title">Backend Development</h2>
-            <div class="article-container">
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>NodeJs</h3>
-                  <p>Intermediate</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Express</h3>
-                  <p>Intermediate</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>MySQL</h3>
-                  <p>Experienced</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>MongoDB</h3>
-                  <p>Intermediate</p>
-                </div>
-              </article>
-
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Git</h3>
-                  <p>Intermediate</p>
-                </div>
-              </article>
-            </div>
+        </div>
+        <div class="skill-group">
+          <h3>Backend &amp; Data</h3>
+          <div class="tag-row">
+            <span class="tag">&lt;Node.js /&gt;</span>
+            <span class="tag">&lt;Express.js /&gt;</span>
+            <span class="tag">&lt;MongoDB /&gt;</span>
+            <span class="tag">&lt;REST APIs /&gt;</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <h3>Tools &amp; Platform</h3>
+          <div class="tag-row">
+            <span class="tag">&lt;Git /&gt;</span>
+            <span class="tag">&lt;GitHub /&gt;</span>
+            <span class="tag">&lt;Docker /&gt;</span>
+            <span class="tag">&lt;Docker Compose /&gt;</span>
+            <span class="tag">&lt;Postman /&gt;</span>
+            <span class="tag">&lt;Cloudinary /&gt;</span>
+            <span class="tag">&lt;Cloudflare /&gt;</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <h3>AI &amp; APIs</h3>
+          <div class="tag-row">
+            <span class="tag">&lt;Gemini API /&gt;</span>
+            <span class="tag">&lt;LLM Integration /&gt;</span>
+            <span class="tag">&lt;YouTube Data API /&gt;</span>
           </div>
         </div>
       </div>
-      <img
-        src="./assets/arrow.png"
-        alt="Arrow icon"
-        class="icon arrow"
-        onclick="location.href='./#projects'"
-      />
-    </section>
-    <section id="projects">
-      <p class="section__text__p1">Browse My Recent</p>
-      <h1 class="title">Projects</h1>
-      <div class="swiper mySwiper">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide card">
-            <div class="details-container color-container">
-              <div class="article-container">
-                <img
-                  src="./assets/project-1.png"
-                  alt="Project 1"
-                  class="project-img"
-                />
-              </div>
-              <h2 class="experience-sub-title project-title">
-                Food-Delivery Website
-              </h2>
-              <div class="btn-container">
-                <button
-                  class="btn btn-color-2 project-btn"
-                  onclick="location.href='https://github.com/omkarwakchaure/Food_Delivery_Website-main'"
-                >
-                  Github
-                </button>
-                <button
-                  class="btn btn-color-2 project-btn"
-                  onclick="location.href='https://youtu.be/PIClCA3NjHk'"
-                >
-                  Live Demo
-                </button>
-              </div>
-            </div>
-          </div>
-          <div class="swiper-slide card">
-            <div class="details-container color-container">
-              <div class="article-container">
-                <img
-                  src="./assets/project-2.png"
-                  alt="Project 2"
-                  class="project-img"
-                />
-              </div>
-              <h2 class="experience-sub-title project-title">
-                Daily-News Website
-              </h2>
-              <div class="btn-container">
-                <button
-                  class="btn btn-color-2 project-btn"
-                  onclick="location.href='https://github.com/omkarwakchaure/News_Website'"
-                >
-                  Github
-                </button>
-                <button
-                  class="btn btn-color-2 project-btn"
-                  onclick="location.href='https://youtu.be/SosZwBD-PZ0'"
-                >
-                  Live Demo
-                </button>
-              </div>
-            </div>
-          </div>
-          <div class="swiper-slide card">
-            <div class="details-container color-container">
-              <div class="article-container">
-                <img
-                  src="./assets/project-3.jpg"
-                  alt="Project 3"
-                  class="project-img"
-                />
-              </div>
-              <h2 class="experience-sub-title project-title">
-                Hotel-Booking Website
-              </h2>
-              <div class="btn-container">
-                <button
-                  class="btn btn-color-2 project-btn"
-                  onclick="location.href='https://github.com/omkarwakchaure/Hotel-Reservations'"
-                >
-                  Github
-                </button>
-                <button
-                  class="btn btn-color-2 project-btn"
-                  onclick="location.href='https://h-reservation.onrender.com/'"
-                >
-                  Live Demo
-                </button>
-              </div>
-            </div>
-          </div>
-          <div class="swiper-slide card">
-            <div class="details-container color-container">
-              <div class="article-container">
-                <img
-                  src="./assets/project-4.png"
-                  alt="Project 3"
-                  class="project-img"
-                />
-              </div>
-              <h2 class="experience-sub-title project-title">
-                Ecommerce Website
-              </h2>
-              <div class="btn-container">
-                <button
-                  class="btn btn-color-2 project-btn"
-                  onclick="location.href='https://github.com/omkarwakchaure/E-Commerce-UI'"
-                >
-                  Github
-                </button>
-                <button
-                  class="btn btn-color-2 project-btn"
-                  onclick="location.href='https://youtu.be/Tu8O0s_jDD0'"
-                >
-                  Live Demo
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="swiper-button-next"></div>
-      <div class="swiper-button-prev"></div>
-      <div class="swiper-pagination"></div>
-      <img
-        src="./assets/arrow.png"
-        alt="Arrow icon"
-        class="icon arrow"
-        onclick="location.href='./#projects'"
-      />
     </section>
 
-    <section id="contact">
-      <p class="section__text__p1">Get in Touch</p>
-      <h1 class="title">Contact me</h1>
-      <div class="contact-info-upper-container">
-        <div class="contact-info-container">
-          <img
-            src="./assets/email.png"
-            alt="Email icon"
-            class="icon contact-icon email-icon"
-          />
-          <p>
-            <a href="Mail-to:omkarwakchaure2019@gmail.com"
-              >omkarwakchaure2019@gmail.com</a
+    <!-- ===== FEATURED PROJECT ===== -->
+    <section id="project">
+      <p class="eyebrow">// project.tsx</p>
+      <h2 class="title">Featured Project</h2>
+
+      <div class="project-showcase">
+        <div class="browser-frame">
+          <div class="browser-bar">
+            <span class="dot red"></span>
+            <span class="dot yellow"></span>
+            <span class="dot green"></span>
+            <span class="browser-url"
+              >ai-powered-video-platform-three.vercel.app</span
             >
-          </p>
+          </div>
+          <div class="video-wrapper">
+            <iframe
+              src="https://www.youtube.com/embed/VGmyBEw5cJg"
+              title="AI-Powered Multilingual Video Learning Platform — walkthrough"
+              loading="lazy"
+              allow="
+                accelerometer;
+                autoplay;
+                clipboard-write;
+                encrypted-media;
+                gyroscope;
+                picture-in-picture;
+              "
+              allowfullscreen
+            ></iframe>
+          </div>
         </div>
-        <div class="contact-info-container">
-          <img
-            src="./assets/linkedin.png"
-            alt="LinkedIn icon"
-            class="icon contact-icon"
-          />
+
+        <div class="project-copy">
+          <h3>AI-Powered Multilingual Video Learning Platform</h3>
+          <p class="project-sub">Mar 2026 — Present</p>
           <p>
-            <a href="https://www.linkedin.com/in/omkar-wakchaure-6662301b3/"
-              >LinkedIn</a
-            >
+            A full-stack React + Express learning platform that transforms
+            long-form YouTube videos into structured, multilingual study
+            material using the Gemini API — including summaries, key points,
+            detailed guides and downloadable PDF notes.
           </p>
-        </div>
-      </div>
-    </section>
-    <footer>
-      <nav>
-        <div class="nav-links-container">
-          <ul class="nav-links">
-            <li><a href="#about">About</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
+          <ul>
+            <li>
+              Integrated Google Gemini AI to generate summaries, key points,
+              detailed guides and takeaways in English, Hindi and Marathi.
+            </li>
+            <li>
+              Built a YouTube-powered video learning experience with search,
+              recommendations, comments and playback using the YouTube Data API.
+            </li>
+            <li>
+              Added PDF export with Devanagari font support for offline,
+              shareable study notes.
+            </li>
+            <li>
+              Implemented Redux-based caching persisted to localStorage, a model
+              fallback chain, and retry logic for API rate limits.
+            </li>
+            <li>
+              Used infinite scrolling, shimmer loaders and code-splitting to
+              keep the experience fast at scale.
+            </li>
           </ul>
+
+          <div class="tag-row">
+            <span class="tag">&lt;React.js /&gt;</span>
+            <span class="tag">&lt;Redux Toolkit /&gt;</span>
+            <span class="tag">&lt;Tailwind CSS /&gt;</span>
+            <span class="tag">&lt;Express.js /&gt;</span>
+            <span class="tag">&lt;Gemini API /&gt;</span>
+            <span class="tag">&lt;YouTube Data API /&gt;</span>
+          </div>
+
+          <div class="btn-container">
+            <a
+              href="https://ai-powered-video-platform-three.vercel.app/"
+              target="_blank"
+              rel="noopener"
+              class="btn btn-solid"
+              >Live Demo ↗</a
+            >
+            <a
+              href="https://github.com/omkarwakchaure/youtube_clone_with_live_api"
+              target="_blank"
+              rel="noopener"
+              class="btn btn-outline"
+              >GitHub Repo ↗</a
+            >
+            <a
+              href="https://youtu.be/VGmyBEw5cJg"
+              target="_blank"
+              rel="noopener"
+              class="btn btn-ghost"
+              >Watch Walkthrough ↗</a
+            >
+          </div>
         </div>
-      </nav>
-      <p>Copyright &#169; 2023 Omkar Wakchaure. All Rights Reserved.</p>
+      </div>
+    </section>
+
+    <!-- ===== CONTACT ===== -->
+    <section id="contact">
+      <p class="eyebrow">// contact.tsx</p>
+      <h2 class="title">Get In Touch</h2>
+      <p class="contact-sub">
+        I'm currently looking for frontend opportunities where I can build
+        scalable React applications and take on greater ownership.
+      </p>
+
+      <div class="contact-grid">
+        <a
+          class="contact-card"
+          href="mailto:omkarwakchaure2019@gmail.com"
+          id="email-card"
+        >
+          <img src="./assets/email.png" alt="" class="icon" />
+          <div>
+            <h3>Email</h3>
+            <p id="email-text">omkarwakchaure2019@gmail.com</p>
+          </div>
+          <button
+            type="button"
+            class="copy-btn"
+            id="copy-email-btn"
+            aria-label="Copy email address"
+            title="Copy email address"
+          >
+            ⧉
+          </button>
+        </a>
+        <a
+          class="contact-card"
+          href="https://www.linkedin.com/in/omkar-wakchaure-6662301b3/"
+          target="_blank"
+          rel="noopener"
+        >
+          <img src="./assets/linkedin.png" alt="" class="icon" />
+          <div>
+            <h3>LinkedIn</h3>
+            <p>/in/omkar-wakchaure</p>
+          </div>
+        </a>
+        <a
+          class="contact-card"
+          href="https://github.com/omkarwakchaure"
+          target="_blank"
+          rel="noopener"
+        >
+          <img src="./assets/github.png" alt="" class="icon" />
+          <div>
+            <h3>GitHub</h3>
+            <p>/omkarwakchaure</p>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <footer>
+      <p class="footer-name">Omkar Wakchaure</p>
+      <p class="footer-tag">
+        Frontend Developer · React · TypeScript · AI Integration
+      </p>
+      <p class="footer-copy">© 2026 Omkar Wakchaure. All rights reserved.</p>
     </footer>
-    <!-- Swiper JS -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
     <script src="script.js"></script>
   </body>
 </html>
